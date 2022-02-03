@@ -1,9 +1,7 @@
 import React, {useState} from 'react';
-import {storages, storageRef} from './fbase';
-
-import ReactDOM from 'react-dom';
+import {storages} from './fbase.js';
+import {ref} from "firebase/storage";
 import './index.css';
-import App from './App';
 import reportWebVitals from './reportWebVitals';
 import {render} from "react-dom"
 
@@ -20,7 +18,8 @@ const ReactFirebaseFileUpload=()=>{
   };
 
   const handleUpload=()=>{
-    const uploadTask=storages.storageRef(`images/${image.name}`).put(image);
+    console.log(image);
+    const uploadTask=storages.ref(`images/${image.name}`).put(image);
     uploadTask.on(
       "state_changed",
       snapshot => {
