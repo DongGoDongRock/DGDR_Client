@@ -1,15 +1,17 @@
 import React, {useState} from 'react';
-import {storage} from './fbase'
+import {storages, storageRef} from './fbase';
+
 import ReactDOM from 'react-dom';
 import './index.css';
 import App from './App';
 import reportWebVitals from './reportWebVitals';
+import {render} from "react-dom"
 
 
 const ReactFirebaseFileUpload=()=>{
   const [image, setimage]=useState(null);
   const [url, setUrl]=useState("");
-  const [progress, setProgress]=useState[0];
+  const [progress, setProgress]=useState(0);
 
   const handleChange=e=>{
     if(e.target.files[0]){
@@ -18,7 +20,7 @@ const ReactFirebaseFileUpload=()=>{
   };
 
   const handleUpload=()=>{
-    const uploadTask=storage.ref(`images/${image.name}`).put(image);
+    const uploadTask=storages.storageRef(`images/${image.name}`).put(image);
     uploadTask.on(
       "state_changed",
       snapshot => {
@@ -31,7 +33,7 @@ const ReactFirebaseFileUpload=()=>{
         console.log(error);
       },
       ()=>{
-        storage
+        storages
         .ref("images")
         .child(image.name)
         .getDownloadURL()
@@ -59,15 +61,17 @@ const ReactFirebaseFileUpload=()=>{
   );
 };
 
+render(<ReactFirebaseFileUpload />, document.querySelector("#root"));
+/*
 ReactDOM.render(
   <React.StrictMode>
     <App />
   </React.StrictMode>,
   <ReactFirebaseFileUpload/>,
   document.getElementById('root'),
-  document.querySelector("#root")
+  document.getq("#root")
 );
-
+*/
 // If you want to start measuring performance in your app, pass a function
 // to log results (for example: reportWebVitals(console.log))
 // or send to an analytics endpoint. Learn more: https://bit.ly/CRA-vitals
