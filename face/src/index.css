@@ -13,7 +13,68 @@ code {
 }
 
 .main{
+  display: grid;
   object-fit: scale-down;
   height: 500px;
   width: 500px;
+  place-items: center;
+  justify-content: center;
+}
+
+.upload{
+  height:80px;
+  background-color:black;
+  display: block;
+}
+
+button{
+  display: inline-block;
+  background-color: #38d85b;
+  border-radius: 20px;
+  border: 4px double #cccccc;
+  color:black;
+  text-align: center;
+  font-size: 14px;
+  padding: 10px;
+  width: 150px;
+  transition: all 0.5s;
+  cursor: pointer;
+  margin: 5px;
+  place-items: center;
+  
+  
+
+}
+
+input{
+  display: inline-block;
+  background-color: #38d85b;
+  border-radius: 20px;
+  border: 4px double #cccccc;
+  color: black;
+  text-align: center;
+  padding: 7px;
+  width: 150px;
+  transition: all 0.5s;
+  cursor: pointer;
+  margin: 5px;
+
+ 
+  
+}
+
+header{
+  color:chartreuse;
+  font-size: 45px;
+  text-align: center;
+}
+
+progress{
+  display: inline-block;
+  align-content: center;
+
+}
+progress::-webkit-progress-bar{
+  background-color: rgb(228, 144, 18);
+
 }
