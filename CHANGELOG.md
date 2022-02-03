@@ -1,3 +1,9 @@
+## v0.2.3 (2022-02-03)
+
+### Refactor
+
+- **loading.js-index.css**: style changes and loading window added but still need fixes
+
 ## v0.2.2 (2022-02-03)
 
 ### Fix
