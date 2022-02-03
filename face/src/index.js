@@ -1,6 +1,5 @@
 import React, {useState} from 'react';
 import {storages} from './fbase.js';
-import {ref} from "firebase/storage";
 import './index.css';
 import reportWebVitals from './reportWebVitals';
 import {render} from "react-dom"
@@ -53,9 +52,8 @@ const ReactFirebaseFileUpload=()=>{
       <input type="file" onChange={handleChange}/>
       <button onClick={handleUpload}>Upload</button>
       <br/>
-      {url}
-      <br/>
-      <img src={url || "http://via.placeholder.com/300"} alt="firebase-image"/>
+      
+      <img src={url|| "http://via.placeholder.com/100"} className="main" alt="firebase-image"/>
     </div>
   );
 };
