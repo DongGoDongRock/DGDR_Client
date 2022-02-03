@@ -1,3 +1,9 @@
+## v0.2.2 (2022-02-03)
+
+### Fix
+
+- **index.js-fbase.js**: access to storage in firebase, appearance in window
+
 ## v0.2.1 (2022-02-02)
 
 ### Fix
